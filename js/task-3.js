@@ -16,27 +16,11 @@ const images = [
   },
 ];
 
-// const creatImg = image => {
-//   const galleryItemRef = document.createElement('li');
-//   galleryItemRef.classList.add('gallery__item');
-//   galleryItemRef.insertAdjacentHTML(
-//     'afterbegin',
-//     `<img src=${image.url} alt=${image.alt}>`,
-//   );
-//   return galleryItemRef;
-// };
-
-// const galleryImages = images.map(image => creatImg(image));
-// console.log(galleryImages);
-// const galleryRef = document.getElementById('gallery');
-// galleryRef.append(...galleryImages);
-
-const galleryItemRef = document.createElement('li');
-galleryItemRef.classList.add('gallery__item');
+const imagesTagsList = images
+  .map(image => {
+    const galleryItem = `<li class='gallery__item' ><img src=${image.url} class="gallery__image" alt=${image.alt}></li>`;
+    return galleryItem;
+  })
+  .join('');
 const galleryRef = document.getElementById('gallery');
-images.forEach(image =>
-  galleryRef.insertAdjacentHTML(
-    'afterbegin',
-    `<li class ='gallery__item'><img src=${image.url} alt=${image.alt} class="gallery__image"></li>`,
-  ),
-);
+galleryRef.insertAdjacentHTML('afterbegin', imagesTagsList);
