@@ -18,7 +18,7 @@ const images = [
 
 const imagesTagsList = images
   .map(image => {
-    const galleryItem = `<li class='gallery__item' ><img src=${image.url} class="gallery__image" alt=${image.alt}></li>`;
+    const galleryItem = `<li class='gallery__item' ><img src='${image.url}' class="gallery__image" alt='${image.alt}'></li>`;
     return galleryItem;
   })
   .join('');
