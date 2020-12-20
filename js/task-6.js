@@ -1,6 +1,6 @@
 const userInputRef = document.getElementById('validation-input');
 
-userInputRef.addEventListener('change', () => {
+userInputRef.addEventListener('blur', () => {
   if (
     event.target.value.length === Number(userInputRef.dataset.length) &&
     !userInputRef.classList.contains('invalid') &&
